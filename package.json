@@ -1,6 +1,6 @@
 {
   "name": "@brick-a-brack/napi-canon-cameras",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "description": "Node AddOn Api module for Canon cameras. Wrapper for the Canon EDSDK.",
   "keywords": [
@@ -45,7 +45,7 @@
   "license": "GPL-3.0-or-later",
   "repository": {
     "type": "git",
-    "url": "git@github.com:brick-a-brack/napi-canon-cameras.git"
+    "url": "git+ssh://git@github.com/brick-a-brack/napi-canon-cameras.git"
   },
   "dependencies": {
     "node-addon-api": "^8.0.0",
