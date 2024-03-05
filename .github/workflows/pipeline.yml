@@ -56,7 +56,5 @@ jobs:
           cd dist/tmp
           7z x ../napi-canon-cameras.tgz
           npm config set @brick-a-brack:registry https://registry.npmjs.org
-          npm config set //registry.npmjs.org/:_authToken $NPM_TOKEN
+          npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
           npm publish
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
