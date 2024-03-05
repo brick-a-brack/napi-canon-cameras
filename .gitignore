@@ -1,4 +1,5 @@
 build/
+dist/
 cmake-build/
 cmake-build-debug/
 node_modules/

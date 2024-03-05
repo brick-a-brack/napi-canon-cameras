@@ -1,6 +1,7 @@
 {
-  "name": "brick-a-brack/napi-canon-cameras",
-  "version": "0.1.0",
+  "name": "@brick-a-brack/napi-canon-cameras",
+  "version": "0.1.2",
+  "private": false,
   "description": "Node AddOn Api module for Canon cameras. Wrapper for the Canon EDSDK.",
   "keywords": [
     "camera",
@@ -10,6 +11,10 @@
     "canon",
     "dslr"
   ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "gypfile": true,
   "main": "camera-api.js",
   "browser": "camera-api-stubs.js",

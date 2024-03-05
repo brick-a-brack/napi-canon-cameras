@@ -6,7 +6,7 @@ const sourceDirectory = path.resolve(
     __dirname, '..'
 );
 const targetDirectory = path.resolve(
-    __dirname, '..', 'dist', 'brick-a-brack',
+    __dirname, '..', 'dist',
 );
 const targetFile = path.resolve(
     targetDirectory, 'napi-canon-cameras.tgz'
@@ -29,7 +29,7 @@ tar.pack(
             'LICENSE',
             'package.json',
             'package-lock.json',
-            'README.md',
+            'README.md'
         ],
         map: function (header) {
             header.name = './' + header.name;

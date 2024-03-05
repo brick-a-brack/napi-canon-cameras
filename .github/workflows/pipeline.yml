@@ -28,9 +28,9 @@ jobs:
 
       - name: Download EDSDK
         run: |
-          curl https://uploads.brickfilms.com/files/1/b95f9b3e-edsdkv131712w.zip -o third_party/b95f9b3e-edsdkv131712w.zip
+          curl ${{ secrets.SDK_WINDOWS_DOWNLOAD_URL }} -o third_party/edsdkw.zip
           cd third_party/
-          7z x b95f9b3e-edsdkv131712w.zip
+          7z x edsdkw.zip
 
       - name: Patch EDSDKTypes.h file
         run: node helpers/patch-headers.js
@@ -50,6 +50,11 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
   
       - name: Publish to Github Packages
-        run:  npm publish dist/brick-a-brack/napi-canon-cameras.tgz
+        run: |
+          echo $NPM_TOKEN
+          mkdir dist/tmp
+          cd dist/tmp
+          7z x ../napi-canon-cameras.tgz
+          npm publish
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
