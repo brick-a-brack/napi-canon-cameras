@@ -49,12 +49,14 @@ jobs:
       #    node-version: '20.x'
       #    registry-url: 'https://registry.npmjs.org'
   
-      - name: Publish to NPM
-        run: |
-          echo $NPM_TOKEN
-          mkdir dist/tmp
-          cd dist/tmp
-          7z x ../napi-canon-cameras.tgz
-          npm config set @brick-a-brack:registry https://registry.npmjs.org
-          npm config set //registry.npmjs.org/:_authToken ${{ secrets.NPM_TOKEN }}
-          npm publish
+      #- name: Publish to NPM
+      #  run: |
+      #    echo $NPM_TOKEN
+      #    mkdir dist/tmp
+      #    cd dist/tmp
+      #    7z x ../napi-canon-cameras.tgz
+
+      - uses: JS-DevTools/npm-publish@v3
+        with:
+          package: dist/napi-canon-cameras.tgz
+          token: ${{ secrets.NPM_TOKEN }}
