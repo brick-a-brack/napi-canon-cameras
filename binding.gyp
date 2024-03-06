@@ -1,7 +1,8 @@
 {
     "variables": {
-        "edsdk_version": "131520",
-        "edsdk_directory%": "EDSDK"
+        "edsdk_version": "131712",
+        "edsdk_directory%": "EDSDK",
+        "openssl_fips":0
     },
     "defines": [
         "NAPI_VERSION=<(napi_build_version)",
@@ -122,7 +123,7 @@
                                 '-Wno-ignored-attributes'
                             ],
                             'OTHER_LDFLAGS': [
-                                '-Wl,-rpath,./prebuilds/darwin-x64/,-rpath,./node_modules/@dimensional/napi-canon-cameras/prebuilds/darwin-x64/',
+                                '-Wl,-rpath,./prebuilds/darwin-x64/,-rpath,./node_modules/@brick-a-brack/napi-canon-cameras/prebuilds/darwin-x64/',
                                 '-F ../third_party/<(edsdk_directory)/macos/EDSDK/Framework/',
                                 '-framework EDSDK'
                             ]

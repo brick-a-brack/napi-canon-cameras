@@ -1,0 +1,58 @@
+name: Build & package
+
+on:
+  push:
+    branches:
+      - 'master'
+      - 'fixes'
+
+jobs:
+  release:
+    name: Build & package
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [windows-latest]
+
+    steps:
+      - name: Clone source code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 20
+
+      - name: Download EDSDK
+        run: |
+          curl ${{ secrets.SDK_WINDOWS_DOWNLOAD_URL }} -o third_party/edsdkw.zip
+          cd third_party/
+          7z x edsdkw.zip
+
+      - name: Patch EDSDKTypes.h and binding.gyp files
+        run: node helpers/patch-files.js
+        env:
+          EDSDK_VERSION: ${{ secrets.EDSDK_VERSION }}
+
+      - name: Install dependencies
+        run: |
+          npm ci
+
+      - name: Package module
+        run: npm run package
+        env:
+          CI: true
+
+      - name: Publish to NPM
+        run: |
+          mkdir dist/tmp
+          cd dist/tmp
+          7z x ../napi-canon-cameras.tgz
+
+      - uses: JS-DevTools/npm-publish@v3
+        with:
+          package: dist/tmp/package.json
+          token: ${{ secrets.NPM_TOKEN }}

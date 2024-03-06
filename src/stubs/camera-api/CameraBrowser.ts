@@ -28,7 +28,7 @@ export class CameraBrowser {
      *
      * @example
      * ```typescript
-     * const {cameraBrowser, watchCameras} = require('@dimensional/napi-canon-cameras');
+     * const {cameraBrowser, watchCameras} = require('@brick-a-brack/napi-canon-cameras');
      * cameraBrowser.setEventHandler(
      *   (eventName, event) => { console.log(eventName, event); }
      * );
