@@ -123,7 +123,7 @@
                                 '-Wno-ignored-attributes'
                             ],
                             'OTHER_LDFLAGS': [
-                                '-Wl,-rpath,./prebuilds/darwin-x64/,-rpath,./node_modules/@dimensional/napi-canon-cameras/prebuilds/darwin-x64/',
+                                '-Wl,-rpath,./prebuilds/darwin-x64/,-rpath,./node_modules/@brick-a-brack/napi-canon-cameras/prebuilds/darwin-x64/',
                                 '-F ../third_party/<(edsdk_directory)/macos/EDSDK/Framework/',
                                 '-framework EDSDK'
                             ]

@@ -57,5 +57,6 @@ jobs:
 
       - uses: JS-DevTools/npm-publish@v3
         with:
-          package: dist/tmp
+          package: dist/tmp/package.json
           token: ${{ secrets.NPM_TOKEN }}
+          tag: latest

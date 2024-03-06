@@ -668,7 +668,13 @@ An internal class that will be added to Exceptions as "EDS_ERROR" property.
 
 **Example**  
 
-```typescripttry {} catch (e) {  if ("EDS_ERROR" in e && e.EDS_ERROR.equalTo(ApiError.Code.DEVICE_BUSY)) {  }}```
+```typescript
+try {
+} catch (e) {
+  if ("EDS_ERROR" in e && e.EDS_ERROR.equalTo(ApiError.Code.DEVICE_BUSY)) {
+  }
+}
+```
 
 <a name="ApiIdentifier+label"></a>
 
@@ -701,7 +707,8 @@ An internal class that will be added to Exceptions as "EDS_ERROR" property.
 <a name="ApiIdentifier+Symbol_toPrimitive"></a>
 
 ## apiError.Symbol\_toPrimitive(hint) ⇒ <code>string</code> \| <code>number</code> \| <code>null</code>
-Allows type cast to number and string.The string will be a hexadecimal code representation of the number
+Allows type cast to number and string.
+The string will be a hexadecimal code representation of the number
 
 **Kind**: instance method of [<code>ApiError</code>](#ApiError)  
 <table>
@@ -1035,7 +1042,8 @@ Superclass for identifier wrappers. Provides the identifiers as class constants 
 <a name="ApiIdentifier+Symbol_toPrimitive"></a>
 
 ## apiIdentifier.Symbol\_toPrimitive(hint) ⇒ <code>string</code> \| <code>number</code> \| <code>null</code>
-Allows type cast to number and string.The string will be a hexadecimal code representation of the number
+Allows type cast to number and string.
+The string will be a hexadecimal code representation of the number
 
 **Kind**: instance method of [<code>ApiIdentifier</code>](#ApiIdentifier)  
 <table>
@@ -1412,7 +1420,7 @@ Request LiveView stop, triggers event on success
         * ["Error"](#CameraBrowser+event_Error)
     * _static_
         * [.EventName](#CameraBrowser.EventName) : <code>enum</code>
-
+brick-a-brack
 <a name="new_CameraBrowser_new"></a>
 
 ## new CameraBrowser()
@@ -1420,7 +1428,18 @@ Access to Canon Cameras
 
 **Example**  
 
-```typescriptconst {cameraBrowser, watchCameras} = require('@dimensional/napi-canon-cameras');cameraBrowser.setEventHandler(  (eventName, event) => { console.log(eventName, event); });process.on('SIGINT', () => process.exit());console.log(cameraBrowser.getCameras());watchCameras();```
+```typescript
+const {cameraBrowser, watchCameras} = require('@dimensional/napi-canon-cameras');
+cameraBrowser.setEventHandler(
+  (eventName, event) => { console.log(eventName, event); }
+);
+
+process.on('SIGINT', () => process.exit());
+
+console.log(cameraBrowser.getCameras());
+
+watchCameras();
+```
 
 <a name="CameraBrowser+setEventHandler"></a>
 
@@ -1461,7 +1480,8 @@ Trigger SDK events
 <a name="CameraBrowser+getCamera"></a>
 
 ## cameraBrowser.getCamera([at], [exactOnly])
-Get camera at port or index. Returns the first camera in the internal list ifport or position is invalid. USe the exactOnly argument to disable the fallback.
+Get camera at port or index. Returns the first camera in the internal list if
+port or position is invalid. USe the exactOnly argument to disable the fallback.
 
 **Kind**: instance method of [<code>CameraBrowser</code>](#CameraBrowser)  
 <table>
@@ -1887,7 +1907,10 @@ Camera property/setting.
 
 **Example**  
 
-```typescriptconst property = camera.getProperty(Property.ID.Av);console.log(property.value, property.allowedValues);```
+```typescript
+const property = camera.getProperty(Property.ID.Av);
+console.log(property.value, property.allowedValues);
+```
 
 <a name="CameraProperty+label"></a>
 
@@ -3217,7 +3240,8 @@ Encapsulate Object Event Identifiers For Easy Read And Debug
 <a name="ApiIdentifier+Symbol_toPrimitive"></a>
 
 ## objectEvent.Symbol\_toPrimitive(hint) ⇒ <code>string</code> \| <code>number</code> \| <code>null</code>
-Allows type cast to number and string.The string will be a hexadecimal code representation of the number
+Allows type cast to number and string.
+The string will be a hexadecimal code representation of the number
 
 **Kind**: instance method of [<code>ObjectEvent</code>](#ObjectEvent)  
 <table>
@@ -3318,7 +3342,9 @@ Allows type cast to number and string.The string will be a hexadecimal code rep
 <a name="new_Option_new"></a>
 
 ## new Option(propertyID_, value_)
-Option represents a property value from a property specific list.It provides constants for all possible property values. However it dependson the camera and the camera status which option values are available.
+Option represents a property value from a property specific list.
+It provides constants for all possible property values. However it depends
+on the camera and the camera status which option values are available.
 
 <table>
   <thead>
@@ -4848,7 +4874,8 @@ Encapsulate Object Event Identifiers For Easy Read And Debug
 <a name="ApiIdentifier+Symbol_toPrimitive"></a>
 
 ## stateEvent.Symbol\_toPrimitive(hint) ⇒ <code>string</code> \| <code>number</code> \| <code>null</code>
-Allows type cast to number and string.The string will be a hexadecimal code representation of the number
+Allows type cast to number and string.
+The string will be a hexadecimal code representation of the number
 
 **Kind**: instance method of [<code>StateEvent</code>](#StateEvent)  
 <table>

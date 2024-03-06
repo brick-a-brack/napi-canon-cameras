@@ -1,4 +1,4 @@
-# @dimensional/napi-canon-cameras
+# @brick-a-brack/napi-canon-cameras
 
 EDSDK (Canon camera) wrapper module for Node.js
 
@@ -107,9 +107,9 @@ to build a TGZ.
  2. Make sure the variable `edsdk_version` in `binding.gyp` matches the EDSDK version. (The numeric part of the 
     package name)
  3. Run `npm run package`
- 4. Look for `../node_packages/@dimensional/napi-canon-cameras.tgz`
+ 4. Look for `../node_packages/@brick-a-brack/napi-canon-cameras.tgz`
  5. `cd ../YourProject` (Switch to your project directory)
- 6. `npm i ../node_packages/@dimensional/napi-canon-cameras.tgz`
+ 6. `npm i ../node_packages/@brick-a-brack/napi-canon-cameras.tgz`
 
 The current EDSDK versions have a bug in `EDSDKTypes.h`. The keys are missing
 their prefixes. This will result in a conflict at compile time.
