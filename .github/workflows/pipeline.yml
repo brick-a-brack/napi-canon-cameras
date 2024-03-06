@@ -44,11 +44,6 @@ jobs:
         env:
           CI: true
 
-      #- uses: actions/setup-node@v4
-      #  with:
-      #    node-version: '20.x'
-      #    registry-url: 'https://registry.npmjs.org'
-  
       - name: Publish to NPM
         run: |
           mkdir dist/tmp
@@ -59,4 +54,3 @@ jobs:
         with:
           package: dist/tmp/package.json
           token: ${{ secrets.NPM_TOKEN }}
-          tag: latest
