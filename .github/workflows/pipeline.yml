@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - 'master'
-      - 'fixes'
 
 jobs:
   release:
@@ -42,17 +41,17 @@ jobs:
           npm ci
 
       - name: Package module
-        run: npm run package
+        run: |
+          npm run package
+          mkdir dist/tmp
+          cd dist/tmp
+          7z x ../napi-canon-cameras.tgz
         env:
           CI: true
 
       - name: Publish to NPM
-        run: |
-          mkdir dist/tmp
-          cd dist/tmp
-          7z x ../napi-canon-cameras.tgz
-
-      - uses: JS-DevTools/npm-publish@v3
+        uses: JS-DevTools/npm-publish@v3
+        if: github.ref == 'refs/heads/main'
         with:
           package: dist/tmp/package.json
           token: ${{ secrets.NPM_TOKEN }}
