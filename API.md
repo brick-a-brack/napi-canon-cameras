@@ -1420,7 +1420,7 @@ Request LiveView stop, triggers event on success
         * ["Error"](#CameraBrowser+event_Error)
     * _static_
         * [.EventName](#CameraBrowser.EventName) : <code>enum</code>
-brick-a-brack
+
 <a name="new_CameraBrowser_new"></a>
 
 ## new CameraBrowser()
