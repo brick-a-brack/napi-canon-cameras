@@ -51,7 +51,8 @@ jobs:
           CI: true
 
       - name: Publish to NPM
+        uses: JS-DevTools/npm-publish@main
         if: github.ref == 'refs/heads/main'
-        run: cd dist/tmp/ && npm publish --provenance --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        with:
+          package: dist/tmp/package.json
+          token: ${{ secrets.NPM_TOKEN }}
