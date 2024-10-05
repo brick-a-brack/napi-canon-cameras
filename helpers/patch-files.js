@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const EDSDK_VERSION = process.env.EDSDK_VERSION || 131712;
+const EDSDK_VERSION = process.env.EDSDK_VERSION || 131830;
 
 for (const file of [
     `third_party/EDSDKv${EDSDK_VERSION}L/Linux/EDSDK/Header/EDSDKTypes.h`,

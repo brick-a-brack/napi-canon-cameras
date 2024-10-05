@@ -346,7 +346,7 @@ namespace CameraApi {
             {Evf_AFMode_LiveMulti, "FlexiZoneMulti"},
             {Evf_AFMode_LiveZone, "ZoneAF"},
             {Evf_AFMode_LiveSingleExpandCross, "ExpandAFAreaCross"},
-            {Evf_AFMode_LiveSingleExpandSurround, "ExpandAFAreaAround"},
+            //{Evf_AFMode_LiveSingleExpandSurround, "ExpandAFAreaAround"}, // Not available in EDSK131830?
             {Evf_AFMode_LiveZoneLargeH, "LargeZoneAFHorizontal"},
             {Evf_AFMode_LiveZoneLargeV, "LargeZoneAFVertical"},
             {Evf_AFMode_LiveCatchAF, "TrackingAF"},
