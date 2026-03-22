@@ -4,7 +4,7 @@
 #include <napi.h>
 
 #ifdef __MACOS__
-include <CoreFoundation/CoreFoundation.h>
+#include <CoreFoundation/CoreFoundation.h>
 #endif
 
 #include <EDSDKTypes.h>
